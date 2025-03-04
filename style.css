@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6; /* Baby pink background */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    color: #ff4d4d;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Buttons */
+.buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 10px;
+}
+
+#noBtn {
+    background-color: #666;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Flowers */
+.flower {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    mix-blend-mode: multiply; 
+    background: radial-gradient(circle, transparent 60%, white 100%);
+    mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation for flowers */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
