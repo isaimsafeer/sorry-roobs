@@ -9,52 +9,105 @@ body {
 
 .container {
     margin-top: 100px;
+    padding: 20px;
 }
 
 h1 {
     color: #ff4d4d;
+    font-size: 2rem;
 }
 
 p {
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 /* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .buttons button {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 12px 24px;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
     transition: 0.3s;
+    border-radius: 10px;
 }
 
 #yesBtn {
     background-color: #ff4d4d;
     color: white;
-    border-radius: 10px;
 }
 
 #noBtn {
     background-color: #666;
     color: white;
-    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Flowers */
+/* Flower animation */
 .flower {
     position: absolute;
-    width: 80px;
-    height: auto;
-    mix-blend-mode: multiply; 
+    width: 40px;
+    height: 40px;
+    mix-blend-mode: multiply;
+    animation: float 4s ease-in-out infinite;
     background: radial-gradient(circle, transparent 60%, white 100%);
     mask-image: radial-gradient(circle, black 60%, transparent 100%);
-    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.1));
 }
 
-/* Floating animation for flowers */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .buttons button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) translateX(5px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
